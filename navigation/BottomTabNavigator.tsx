@@ -68,7 +68,7 @@ function MonCompteNavigator() {
             <MonCompteStack.Screen
                 name="MonCompteScreen"
                 component={MonCompteScreen}
-                options={{ headerTitle: 'MonCompte' }}
+                options={{ headerTitle: 'Mon Compte' }}
             />
         </MonCompteStack.Navigator>
     );
@@ -82,7 +82,7 @@ function CarteFideliteNavigator() {
             <CarteFideliteStack.Screen
                 name="CarteFideliteScreen"
                 component={CarteFideliteScreen}
-                options={{ headerTitle: 'Mon Compte' }}
+                options={{ headerTitle: 'Carte Fidelite' }}
             />
         </CarteFideliteStack.Navigator>
     );

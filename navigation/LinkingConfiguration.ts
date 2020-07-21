@@ -11,14 +11,19 @@ export default {
               TabOneScreen: 'Mon Compte',
             },
           },
-          FaireDon: {
+          CarteFidelite: {
             screens: {
-              TabOneScreen: 'one',
+              CarteFideliteScreen: 'Carte Fidelite',
             },
           },
-          TabTwo: {
+          FaireDon: {
             screens: {
-              TabTwoScreen: 'two',
+              FaireDonScreen: 'Faire don',
+            },
+          },
+          CartePartenaire: {
+            screens: {
+              CartePartenaireScreen: 'Carte Partenaire',
             },
           },
         },
