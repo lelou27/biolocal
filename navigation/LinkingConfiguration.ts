@@ -6,7 +6,12 @@ export default {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          MonCompte: {
+            screens: {
+              TabOneScreen: 'Mon Compte',
+            },
+          },
+          FaireDon: {
             screens: {
               TabOneScreen: 'one',
             },

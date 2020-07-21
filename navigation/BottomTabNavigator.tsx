@@ -5,9 +5,11 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import FaireDon from '../screens/FaireDon';
+import MonCompteScreen from '../screens/MonCompte';
+import CarteFideliteScreen from '../screens/CarteFidelite';
+import CartePartenaire from '../screens/CartePartenaire';
+import { BottomTabParamList, FaireDonParamList, CartePartenaireParamList,MonCompteParamList,CarteFideliteParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -16,18 +18,32 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="MonCompte"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneNavigator}
+        name="MonCompte"
+        component={MonCompteNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
       />
+    <BottomTab.Screen
+        name="CarteFidelite"
+        component={CarteFideliteNavigator}
+        options={{
+            tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+    />
+    <BottomTab.Screen
+        name="FaireDon"
+        component={FaireDonNavigator}
+        options={{
+            tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+    />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoNavigator}
+        name="CartePartenaire"
+        component={CartePartenaireNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -44,30 +60,58 @@ function TabBarIcon(props: { name: string; color: string }) {
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
+const MonCompteStack = createStackNavigator<MonCompteParamList>();
 
-function TabOneNavigator() {
+function MonCompteNavigator() {
+    return (
+        <MonCompteStack.Navigator>
+            <MonCompteStack.Screen
+                name="MonCompteScreen"
+                component={MonCompteScreen}
+                options={{ headerTitle: 'MonCompte' }}
+            />
+        </MonCompteStack.Navigator>
+    );
+}
+
+const CarteFideliteStack = createStackNavigator<CarteFideliteParamList>();
+
+function CarteFideliteNavigator() {
+    return (
+        <CarteFideliteStack.Navigator>
+            <CarteFideliteStack.Screen
+                name="CarteFideliteScreen"
+                component={CarteFideliteScreen}
+                options={{ headerTitle: 'Mon Compte' }}
+            />
+        </CarteFideliteStack.Navigator>
+    );
+}
+
+const FaireDonStack = createStackNavigator<FaireDonParamList>();
+
+function FaireDonNavigator() {
   return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="TabOneScreen"
-        component={TabOneScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+    <FaireDonStack.Navigator>
+      <FaireDonStack.Screen
+        name="FaireDonScreen"
+        component={FaireDon}
+        options={{ headerTitle: 'Faire Don' }}
       />
-    </TabOneStack.Navigator>
+    </FaireDonStack.Navigator>
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const CartePartenaireStack = createStackNavigator<CartePartenaireParamList>();
 
-function TabTwoNavigator() {
+function CartePartenaireNavigator() {
   return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+    <CartePartenaireStack.Navigator>
+      <CartePartenaireStack.Screen
+        name="CartePartenaireScreen"
+        component={CartePartenaire}
+        options={{ headerTitle: 'Carte Partenaire' }}
       />
-    </TabTwoStack.Navigator>
+    </CartePartenaireStack.Navigator>
   );
 }
