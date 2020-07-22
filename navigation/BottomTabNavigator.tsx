@@ -1,15 +1,17 @@
-import { Ionicons } from '@expo/vector-icons';
+import {AntDesign, Feather, FontAwesome5, Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import FaireDon from '../screens/FaireDon';
-import MonCompteScreen from '../screens/MonCompte';
-import CarteFideliteScreen from '../screens/CarteFidelite';
-import CartePartenaire from '../screens/CartePartenaire';
-import { BottomTabParamList, FaireDonParamList, CartePartenaireParamList,MonCompteParamList,CarteFideliteParamList } from '../types';
+import { BottomTabParamList } from '../types';
+
+import {
+    CarteFideliteNavigator,
+    CartePartenaireNavigator,
+    FaireDonNavigator, InformationsNavigator,
+    MonCompteNavigator
+} from "../components/Navigator/Navigator";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -24,30 +26,41 @@ export default function BottomTabNavigator() {
         name="MonCompte"
         component={MonCompteNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="account" size={24} color={color} />,
+            tabBarLabel: "Mon compte",
         }}
       />
     <BottomTab.Screen
         name="CarteFidelite"
         component={CarteFideliteNavigator}
         options={{
-            tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+            tabBarIcon: ({ color }) => <AntDesign name="creditcard" size={24} color={color} />,
+            tabBarLabel: "Carte fidélité"
         }}
     />
     <BottomTab.Screen
         name="FaireDon"
         component={FaireDonNavigator}
         options={{
-            tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+            tabBarIcon: ({ color }) => <FontAwesome5 name="donate" size={24} color={color} />,
+            tabBarLabel: "Faire don"
         }}
     />
       <BottomTab.Screen
         name="CartePartenaire"
         component={CartePartenaireNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <FontAwesome5 name="globe-africa" size={24} color={color} />,
+            tabBarLabel: "Carte partenaire"
         }}
       />
+        <BottomTab.Screen
+            name="Informations"
+            component={InformationsNavigator}
+            options={{
+                tabBarIcon: ({ color }) => <Feather name="info" size={24} color={color} />,
+            }}
+        />
     </BottomTab.Navigator>
   );
 }
@@ -56,62 +69,4 @@ export default function BottomTabNavigator() {
 // https://icons.expo.fyi/
 function TabBarIcon(props: { name: string; color: string }) {
   return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
-}
-
-// Each tab has its own navigation stack, you can read more about this pattern here:
-// https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const MonCompteStack = createStackNavigator<MonCompteParamList>();
-
-function MonCompteNavigator() {
-    return (
-        <MonCompteStack.Navigator>
-            <MonCompteStack.Screen
-                name="MonCompteScreen"
-                component={MonCompteScreen}
-                options={{ headerTitle: 'Mon Compte' }}
-            />
-        </MonCompteStack.Navigator>
-    );
-}
-
-const CarteFideliteStack = createStackNavigator<CarteFideliteParamList>();
-
-function CarteFideliteNavigator() {
-    return (
-        <CarteFideliteStack.Navigator>
-            <CarteFideliteStack.Screen
-                name="CarteFideliteScreen"
-                component={CarteFideliteScreen}
-                options={{ headerTitle: 'Carte Fidelite' }}
-            />
-        </CarteFideliteStack.Navigator>
-    );
-}
-
-const FaireDonStack = createStackNavigator<FaireDonParamList>();
-
-function FaireDonNavigator() {
-  return (
-    <FaireDonStack.Navigator>
-      <FaireDonStack.Screen
-        name="FaireDonScreen"
-        component={FaireDon}
-        options={{ headerTitle: 'Faire Don' }}
-      />
-    </FaireDonStack.Navigator>
-  );
-}
-
-const CartePartenaireStack = createStackNavigator<CartePartenaireParamList>();
-
-function CartePartenaireNavigator() {
-  return (
-    <CartePartenaireStack.Navigator>
-      <CartePartenaireStack.Screen
-        name="CartePartenaireScreen"
-        component={CartePartenaire}
-        options={{ headerTitle: 'Carte Partenaire' }}
-      />
-    </CartePartenaireStack.Navigator>
-  );
 }
