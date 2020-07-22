@@ -6,7 +6,7 @@ import { Header } from '../Elements/Header/Header';
 export default function MonCompteScreen() {
   return (
       <>
-    <Header />
+    <Header showjauge={true}/>
     <View style={styles.container}>
       <Text style={styles.title}>Mon Compte</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
