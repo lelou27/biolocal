@@ -64,19 +64,6 @@ export const MonCompteNavigator = () => {
     );
 };
 
-export const InformationsNavigator = () => {
-    return (
-        <MonCompteStack.Navigator
-            screenOptions={{
-                headerShown: false
-            }}>
-            <MonCompteStack.Screen
-                name="InformationsScreen"
-                component={InformationsScreen}
-            />
-        </MonCompteStack.Navigator>
-    );
-};
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
