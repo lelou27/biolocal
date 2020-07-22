@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    fontFamily : "Biocal"
   },
   developmentModeText: {
     marginBottom: 20,
@@ -78,6 +79,7 @@ const styles = StyleSheet.create({
   getStartedContainer: {
     alignItems: 'center',
     marginHorizontal: 50,
+    fontFamily : "Biocal"
   },
   homeScreenFilename: {
     marginVertical: 7,
