@@ -54,13 +54,6 @@ export default function BottomTabNavigator() {
             tabBarLabel: "Carte partenaire"
         }}
       />
-        <BottomTab.Screen
-            name="Informations"
-            component={InformationsNavigator}
-            options={{
-                tabBarIcon: ({ color }) => <Feather name="info" size={24} color={color} />,
-            }}
-        />
     </BottomTab.Navigator>
   );
 }
