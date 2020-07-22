@@ -9,11 +9,13 @@ import InformationsScreen from "../Pages/InformationsScreen";
 
 export const CarteFideliteNavigator = () => {
     return (
-        <CarteFideliteStack.Navigator>
+        <CarteFideliteStack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}>
             <CarteFideliteStack.Screen
                 name="CarteFideliteScreen"
                 component={CarteFideliteScreen}
-                options={{ headerTitle: 'Carte Fidelite' }}
             />
         </CarteFideliteStack.Navigator>
     );
@@ -21,11 +23,13 @@ export const CarteFideliteNavigator = () => {
 
 export const FaireDonNavigator = () =>  {
     return (
-        <FaireDonStack.Navigator>
+        <FaireDonStack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}>
             <FaireDonStack.Screen
                 name="FaireDonScreen"
                 component={FaireDon}
-                options={{ headerTitle: 'Faire Don' }}
             />
         </FaireDonStack.Navigator>
     );
@@ -34,11 +38,13 @@ export const FaireDonNavigator = () =>  {
 
 export const CartePartenaireNavigator = () => {
     return (
-        <CartePartenaireStack.Navigator>
+        <CartePartenaireStack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}>
             <CartePartenaireStack.Screen
                 name="CartePartenaireScreen"
                 component={CartePartenaire}
-                options={{ headerTitle: 'Carte Partenaire' }}
             />
         </CartePartenaireStack.Navigator>
     );
@@ -46,11 +52,13 @@ export const CartePartenaireNavigator = () => {
 
 export const MonCompteNavigator = () => {
     return (
-        <MonCompteStack.Navigator>
+        <MonCompteStack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}>
             <MonCompteStack.Screen
                 name="MonCompteScreen"
                 component={MonCompteScreen}
-                options={{ headerTitle: 'Mon Compte' }}
             />
         </MonCompteStack.Navigator>
     );
@@ -58,11 +66,13 @@ export const MonCompteNavigator = () => {
 
 export const InformationsNavigator = () => {
     return (
-        <MonCompteStack.Navigator>
+        <MonCompteStack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}>
             <MonCompteStack.Screen
                 name="InformationsScreen"
                 component={InformationsScreen}
-                options={{ headerTitle: 'Informations' }}
             />
         </MonCompteStack.Navigator>
     );
