@@ -1,13 +1,17 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { Text, View } from '../Themed';
+import {Header} from "../Elements/Header/Header";
 
 export default function Informations() {
     return (
-        <View style={styles.container}>
+        <>
+            <Header/>
+            <View style={styles.container}>
             <Text style={styles.title}>Informations</Text>
             <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
         </View>
+        </>
     );
 }
 

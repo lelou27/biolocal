@@ -1,11 +1,13 @@
 import React, {useState} from "react";
+import Img from "../../../assets/images/Biocal_LogoTypo-2.png"
+import "./Header.module.scss";
 
-function Header() {
+export function Header() {
     const [data, setData] = useState(null);
 
     return (
       <>
-          <p>Ok</p>
+          <img src={Img} height={80} width={260} alt="mon image" />
       </>
     );
 
